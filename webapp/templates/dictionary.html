@@ -1,0 +1,23 @@
+{% block content %}
+<style>
+    body {font-size: 1.5em; color: green; }
+    header { padding: 2em; color: white; background: transparent; background-color: green; }
+</style>
+<body>
+    <header>
+<h3> The Portable Online Dictionary </h3>
+    </header>
+    {% block title  %} <h4 style='text-align: center;'>Welcome To My Portable Online Dictionary</h4> {% endblock title  %}
+
+<form  method="POST" style='text-align: center; margin-top: 2em;'>
+    {% csrf_token %}
+
+    <input  style='border-radius: 0.5em; width: 20em; padding:1.2em; font-size: 0.7em; ' placeholder='What are you looking for? ' type="textbox" name="searchword" id='searchbox'/>
+
+
+    <input style= 'border-radius: 0.5em; color: white; background: green; padding: 1.2em; font-size: 0.6em;' type="submit" value="Search"/>
+
+</form>
+<body>
+{% endblock %}
+

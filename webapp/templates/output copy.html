@@ -1,0 +1,30 @@
+{% block content %}
+<style>
+    body {font-size: 1.5em; color: black; }
+    header { padding: 2em; color: white; background: transparent; background-color: green; }
+</style>
+<body>
+    <header>
+<h3> The Portable Online Dictionary </h3>
+    </header>
+<div style='padding: 1em;'>
+<h3> Your Search Results </h3>
+<ul style='list-style-type: none;'>
+    {% if error %}
+    <br>
+   <span style='border: 2px solid red; padding: 1em;'> {{error}} </span>
+
+    {% elif output  %}
+{% for ans in output %}
+<div style='border: 1px solid green; border-radius: 0.1em; border-bottom: 1px solid green;  padding: 1em;'><li><b>{{ans.words}} ({{ans.type}})</b> : {{ans.meaning}} </li></div>
+{% endfor %}
+</ul>
+
+{% elif not output %}
+<br>
+<span style='border: 2px solid yellow; padding: 1em;'> No results for your query </span>
+{% endif %}
+<div>
+</body>
+{% endblock content %}
+

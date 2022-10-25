@@ -1,0 +1,25 @@
+<html>
+<body>
+{% block content  %}
+{% for proj in projects  %}
+    <ul style='list-style-type: none; margin-bottom: 1.5em;'>
+<li>
+Project: {{proj.title}}</li>
+<li>Category: {{proj.category}}</li>
+<li>Description: {{proj.description}}</li>
+<li><a href='{% url "detail" proj.pk %}'> Read More </a></li>
+</ul>
+{% endfor %}
+
+{% for proj in users  %}
+<ul style='list-style-type: none; margin-bottom: 1.5em;'>
+
+<li>User: {{proj.username}}</li>
+<li>Email: {{proj.email}}</li>
+</ul>
+
+{% endfor %}
+
+{% endblock  %}
+</body>
+</html>
